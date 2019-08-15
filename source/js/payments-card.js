@@ -5,8 +5,9 @@ function setupBraintree() {
   var paymentForm = document.getElementById("payments__braintree-form"),
     nonceInput = document.getElementById("id_braintree_nonce"),
     submitButton = document.getElementById("payments__payment-submit"),
-    loadingErrorMsg =
-      "An error occurred. Please reload the page or try again later.",
+    loadingErrorMsg = window.gettext(
+      "An error occurred. Please reload the page or try again later."
+    ),
     errorDiv = document.getElementById("payments__braintree-errors-card"),
     braintreeErrorClass = "braintree-hosted-fields-invalid",
     braintreeParams = JSON.parse(
@@ -102,7 +103,9 @@ function setupBraintree() {
             hostedFieldsInstance.tokenize(function(tokenizeErr, payload) {
               if (tokenizeErr) {
                 showErrorMessage(
-                  "There was an error processing your payment. Please try again."
+                  window.gettext(
+                    "There was an error processing your payment. Please try again."
+                  )
                 );
                 return;
               }
@@ -112,7 +115,9 @@ function setupBraintree() {
             });
           } else {
             showErrorMessage(
-              "Some of the fields below are invalid. Please correct the invalid fields and try again."
+              window.gettext(
+                "Some of the fields below are invalid. Please correct the invalid fields and try again."
+              )
             );
           }
         });
