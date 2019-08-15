@@ -34,7 +34,7 @@
                         <input type="radio" class="donation-amount__radio" name="amount" value="other" id="one-time-amount-other" autocomplete="off" data-other-amount-radio="">
                         <label for="one-time-amount-other" class="donation-amount__label" data-currency="">{% get_localized_currency_symbol initial_currency_info.code %}</label>
                         <label for="one-time-amount-other-input" class="donation-amount__label--hidden">{% trans "Other amount" %}</label>
-                        <input type="text" class="donation-amount__input" name="one-time-amount-other-input" id="one-time-amount-other-input" placeholder="{% trans 'Other amount' %}" data-other-amount="">
+                        <input type="text" class="donation-amount__input" id="one-time-amount-other-input" placeholder="{% trans 'Other amount' %}" data-other-amount="">
                     </div>
                 </div>
                 <input type="hidden" class="one-time-amount__total">
@@ -142,6 +142,9 @@
         {% render_form_field braintree_form.frequency %}
         {% render_form_field braintree_form.currency %}
         {% render_form_field braintree_form.source_page_id %}
+        {% render_form_field braintree_form.landing_url %}
+        {% render_form_field braintree_form.project %}
+        {% render_form_field braintree_form.campaign_id %}
     </form>
 
     <footer class="donate-form__footer">
