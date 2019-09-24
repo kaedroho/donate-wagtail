@@ -12,6 +12,9 @@
     },
     {
       "url": "heroku/python"
+    },
+    {
+      "url": "https://github.com/frcade/heroku-buildpack-curl-libssh2.git"
     }
   ],
   "formation": {
